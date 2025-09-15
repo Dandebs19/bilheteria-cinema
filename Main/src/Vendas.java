@@ -1,5 +1,5 @@
 public class Vendas {
-    private int quantidade, tipoIngresso, tipoAplicado, idadeCliente, metodoPagamento;
+    private int totalIngressos, tipoIngresso, tipoAplicado, idadeCliente, metodoPagamento;
 
     private double valorTotal;
 
@@ -7,11 +7,15 @@ public class Vendas {
 
     private boolean ingressoGratuito;
 
+    double PercentualValorIngresso;
+
+
     public Vendas(int quantidade, int tipoIngresso, int idadeCliente) {
-        this.quantidade = quantidade;
+        this.totalIngressos = totalIngressos;
         this.tipoIngresso = tipoIngresso;
         this.idadeCliente = idadeCliente;
         this.ingressoGratuito = idadeCliente <= 5;
+        this.idadeCliente = idadeCliente;
         calcularVendas();
     }
     public void calcularVendas() {
@@ -21,7 +25,7 @@ public class Vendas {
         } else {
             this.tipoAplicado = tipoIngresso;
             double precoUnitario = calcularPrecoUnitario();
-            valorTotal = calcularPrecoUnitario() * quantidade;
+            valorTotal = calcularPrecoUnitario() * totalIngressos;
         }
     }
     public double calcularPrecoUnitario() {
@@ -45,6 +49,19 @@ public class Vendas {
             default: return "Indefinido";
             }
         }
-
-
+    public void mostrarValorTotal(){
+        System.out.println("Valor total: " + valorTotal);
+    }
+    public void mostrarValorUnitario(){
+        if (this.tipoIngresso == 1) {
+            PercentualValorIngresso = 1;
+        }
+        else if (this.tipoIngresso == 2) {
+            PercentualValorIngresso = 0.5;
+        }
+        else if (this.tipoIngresso == 3) {
+            PercentualValorIngresso = 0.7;
+        }
+        System.out.printf("Valor de cada ingresso: R$%.2f\n", valorTotal);
+    }
     }

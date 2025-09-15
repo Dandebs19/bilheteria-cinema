@@ -8,16 +8,16 @@ public class Main {
 
         while (true) {
             System.out.println("Quantidade de ingressos: ");
-            int TotalIngressos = input.nextInt();
+            int totalIngressos = input.nextInt();
 
             System.out.println("Tipo de ingresso desejado: \n1 - Inteira (R$30,00) \n2 - Meia (50% Desconto) \n3 - Promocional (30% Desconto)\n4 - Gratuito (até 5 anos de idade)");
-            int TipoIngressos = input.nextInt();
+            int tipoIngresso = input.nextInt();
 
-            Bilheteria bilheteria = new Bilheteria(TotalIngressos, TipoIngressos);
+            Vendas vendaIngressos = new Vendas(totalIngressos, tipoIngresso, idadeCliente);
 
-            System.out.printf("Ingresso comprados: %d\n", TotalIngressos);
-            bilheteria.MostrarValorCadaIngresso();
-            bilheteria.MostrarValorTotal();
+            System.out.printf("Ingresso comprados: %d\n", totalIngressos);
+            vendaIngressos.mostrarValorUnitario();
+            vendaIngressos.mostrarValorTotal();
 
             System.out.println("Atender próximo cliente? (S/N)");
             String AtenderProximoCliente = input.next().toUpperCase();
