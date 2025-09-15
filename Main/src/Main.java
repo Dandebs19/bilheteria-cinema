@@ -9,7 +9,7 @@ public class Main {
         System.out.println("Quantidade de ingressos: ");
         int TotalIngressos = input.nextInt();
 
-        System.out.println("Tipo de ingresso desejado: \n1 - Inteira (R$30,00) \n2 - Meia (50% Desconto) \n3 - Promocional (30% Desconto)\n4 - Gratuito (até 5 anos)");
+        System.out.println("Tipo de ingresso desejado: \n1 - Inteira (R$30,00) \n2 - Meia (50% Desconto) \n3 - Promocional (30% Desconto)\n4 - Gratuito (até 5 anos de idade)");
         int TipoIngressos = input.nextInt();
 
         Bilheteria bilheteria = new Bilheteria(TotalIngressos, TipoIngressos);

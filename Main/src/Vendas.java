@@ -14,16 +14,37 @@ public class Vendas {
         this.ingressoGratuito = idadeCliente <= 5;
         calcularVendas();
     }
-    public calcularVendas(){
-        if(ingressoGratuito == true){
-            
-
+    public void calcularVendas() {
+        if (ingressoGratuito == true) {
+            this.tipoAplicado = 4;
+            this.valorTotal = 0.0;
+        } else {
+            this.tipoAplicado = tipoIngresso;
+            double precoUnitario = calcularPrecoUnitario();
+            valorTotal = calcularPrecoUnitario() * quantidade;
         }
     }
+    public double calcularPrecoUnitario() {
+        switch (tipoIngresso) {
+            case 1:
+                return PRECO_BASE;
+            case 2:
+                return PRECO_BASE * 0.5;
+            case 3:
+                return PRECO_BASE * 0.7;
+            default:
+                return PRECO_BASE;
+        }
+    }
+    public String getTipoIngresso() {
+        switch (tipoAplicado) {
+            case 1: return "Inteira";
+            case 2: return "Meia";
+            case 3: return "Promocional";
+            case 4: return "Gratuito";
+            default: return "Indefinido";
+            }
+        }
 
 
-
-
-
-
-}
+    }
