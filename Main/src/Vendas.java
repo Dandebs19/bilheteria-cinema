@@ -11,7 +11,7 @@ public class Vendas {
 
 
     public Vendas(int quantidade, int tipoIngresso, int idadeCliente) {
-        this.totalIngressos = totalIngressos;
+        this.totalIngressos = quantidade;
         this.tipoIngresso = tipoIngresso;
         this.idadeCliente = idadeCliente;
         this.ingressoGratuito = idadeCliente <= 5;
