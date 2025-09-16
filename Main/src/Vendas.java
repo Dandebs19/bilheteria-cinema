@@ -1,7 +1,7 @@
 public class Vendas {
     private int totalIngressos, tipoIngresso, tipoAplicado, idadeCliente, metodoPagamento;
 
-    private double valorTotal;
+    public double valorTotal;
 
     private static final double PRECO_BASE = 30.0;
 
